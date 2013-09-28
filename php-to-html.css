@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* !
+ * php-to-html.css by zhangxinxu(.com) 2013-09-28
+*/
+
+input { font-size: 100%; }
+.list {
+	width: 460px;
+	padding: 20px; margin: 2em auto;
+	border: 2px solid #a0b3d6;
+	background-color: #f0f3f9;
+}
+.list:before {
+	content: attr(data-index);
+	position: absolute;
+	width: 22px; height: 22px; line-height: 20px;
+	margin: -31px 0 0 -31px;
+	border-radius: 20px;
+	background-color: #34538b;
+	box-shadow: 1px 1px 2px rgba(0,0,0,.25);
+	font-size: 13px; font-weight: 900; font-family: Verdana, Geneva, sans-serif;
+	color: #fff;
+	text-align: center;	
+}
+.error {
+	position: absolute; left: 50%; top: 5px;
+	padding: 2px 8px;
+	border-radius: 2px;
+	background-color: #ff5500;
+	font-size: 14px;
+	color: #fff;
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+	visibility: hidden;
+}
+.namelist {
+	list-style-type: none;
+	margin: 0; padding: 0;
+}
+.button {
+	height: 36px; width: 100px;
+	border: 2px solid #a0b3d6;
+	border-radius: 2px;
+	background-color: #f0f3f9;
+	background-image: -webkit-linear-gradient(top, #f0f3f9, #cad5eb);
+	background-image:      linear-gradient(to bottom, #f0f3f9, #cad5eb);
+	font-size: 14px;
+}
+.button:active {
+	background: #cad5eb;
+}
+
+.failed,
+.success {
+	position: relative;
+}
+.failed:after {
+	content: '失败';
+	position: absolute; right: 5px; top: 0;
+	color: #f50;
+}
+.success:after {
+	content: '成功';
+	position: absolute; right: 5px; top: 0;
+	color: green;
+}
