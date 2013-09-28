@@ -11,7 +11,6 @@
 <meta name="keywords" content="php, html, 工具" />
 <meta name="author" content="张鑫旭, zhangxinxu" />
 <title>批量转HTML页面</title>
-<link rel="stylesheet" href="http://www.zhangxinxu.com/study/css/zxx.lib.css">
 <link rel="stylesheet" href="php-to-html.css">
 </head>
 

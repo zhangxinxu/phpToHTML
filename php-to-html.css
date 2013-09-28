@@ -4,6 +4,8 @@
 */
 
 input { font-size: 100%; }
+.tc{text-align:center;}.fw{font-family: 'Microsoft yahei';}
+.p5{padding:5px;}.pct90{width:90%;}
 .list {
 	width: 460px;
 	padding: 20px; margin: 2em auto;
