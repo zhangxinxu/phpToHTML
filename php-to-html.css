@@ -4,6 +4,7 @@
 */
 
 input { font-size: 100%; }
+.dn{display:none;}
 .tc{text-align:center;}.fw{font-family: 'Microsoft yahei';}
 .p5{padding:5px;}.pct90{width:90%;}
 .list {
