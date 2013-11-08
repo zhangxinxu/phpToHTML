@@ -10,6 +10,7 @@
   				$content = file_get_contents($url.'/'.$val);
 				$content = str_replace('.php', '.html', $content);
 				$content = str_replace('"../', '"../../', $content);
+				$content = str_replace('"./', '"../', $content);
 				
 				if (is_dir($dir.'\\_html') == false) {
 					mkdir($dir.'\\_html');
