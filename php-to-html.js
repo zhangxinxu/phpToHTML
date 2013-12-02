@@ -45,12 +45,18 @@ $("#formFilelist").bind("submit", function() {
 });
 $("#formConvert").bind("submit", function() {
 	var eleSubmit = $(this).find("input[type='submit']"),
-		eleCheckboxs = $(this).find("input[type='checkbox']");
+		eleCheckboxs = $(this).find("input[type='checkbox']"),
+		eleRadios = $(this).find("input[type='radio']");
 	
 	var arrFilename = [];
 	eleCheckboxs.each(function() {
         if (this.checked) arrFilename.push(this.value);
     });
+	
+	var level = '1';
+	eleRadios.each(function() {
+		if (this.checked) level = this.value;	
+	});
 	
 	$.ajax({
 		url: this.action,
@@ -59,12 +65,16 @@ $("#formConvert").bind("submit", function() {
 		data: {
 			dir: dirAddress,
 			url: $("#inputUrl").val(),
+			level: level,
 			filename: arrFilename.join()
 		},
 		success: function(json) {
 			if (json.succ) {
 				$("#succList").show();	
-				$("#previewLink").attr("href", dirAddress + "\\_html");
+				$("#previewLink").attr("href", dirAddress);
+				setTimeout(function() {
+					$("#succList").hide();		
+				}, 3000);
 			} else if (json.data) {
 				$("input[type=checked]").each(function() {
 					if ($.inArray(this.value, json.data)) {

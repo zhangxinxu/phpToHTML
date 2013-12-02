@@ -19,14 +19,20 @@
 <h1 class="tc fw">PHP批量转HTML页面</h1>
 <div class="list" data-index="1">
     <form id="formFilelist" action="ajax/filelist.php" method="get">
-        <p><label for="inputDir">请输入文件夹目录：</label></p>
+        <p><label for="inputDir"><strong>请输入文件夹目录：</strong></label></p>
         <p><input type="search" id="inputDir" class="p5 pct90" name="dir" placeholder="回车确认，如D:\myfile" required autocomplete="on"></p>
          
     </form>
 </div>
 <div id="fileList" class="list dn" data-index="2">
 	<form id="formConvert" action="ajax/convert.php" method="post">
-    	<p><label for="inputUrl">请输入URL根路径：</label></p>
+    	<p><strong>请选择生成的页面的位置：</strong></p>
+        <p>
+        	<input type="radio" id="dirLevel1" name="level" value="1" checked><label for="dirLevel1">下一级目录</label>
+        	<input type="radio" id="dirLevel2" name="level" value="0"><label for="dirLevel2">同一文件夹目录</label>
+            <input type="radio" id="dirLevel3" name="level" value="-1"><label for="dirLevel3">上一级目录</label>
+        </p>
+    	<p><label for="inputUrl"><strong>请输入URL根路径：</strong></label></p>
         <p><input type="url" id="inputUrl" class="p5 pct90" name="url" placeholder="如http://localhost/myfile/" required autocomplete="on"></p>
     	<ul id="nameList" class="namelist"></ul>
         <p><input type="submit" class="button" value="开始转换"></p>
